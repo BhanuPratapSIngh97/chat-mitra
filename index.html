@@ -16,53 +16,23 @@
 </head>
 
 <body>
-    <!-- <div class="col-md-2"> -->
-
-    <!-- </div> -->
     <div class="col-md-12 col-sm-12 col-12">
         <section class="chat_section">
             <div class="brand">
                 <img src="/chat-logo.png" alt="">
                 <h1 id="name"></h1>
             </div>
-            <div class="message_area"></div>
-            <!-- <div> -->
-                <!-- <textarea id="textarea" id="" cols="30" rows="0" placeholder="Type a message."></textarea> -->
-                <!-- <!~~ <button class="btn btn-primary btn-style">semd</button> ~~> -->
-            <!-- </div> -->
-            <div class="textarea-container"> 
-                <textarea id="textarea" placeholder="Type a message....." name="foo"></textarea> 
-                <button class="btn btn-outline-primary" onclick="send_btn()" ><img src="/send.png" alt="" style="width: 62px !important; height: 36px !important;"></button> 
-              </div>
+            <div class="message_area" id="pic"></div>
+            <div class="textarea-container">
+                <textarea id="textarea" placeholder="Type a message....." name="foo"></textarea>
+                <button onclick="send_btn()"><img src="/send.png" alt=""
+                        style="width: 62px !important; height: 36px !important; margin-left: 10px; margin-top: 6px;"></button>
+            </div>
         </section>
     </div>
-
     <script src="/socket.io/socket.io.js"></script>
     <script src="/client.js"></script>
-
-
-    <!-- <section class="chat_section"> -->
-    <!-- <div class="row"> -->
-    <!-- <!~~ <div style="width: 100%;"> ~~> -->
-    <!-- <div class="col-md-3"></div> -->
-    <!-- <div class="col-md-6"> -->
-    <!-- <div style="width: 50%;"> -->
-    <!-- <div class="brand"> -->
-    <!-- <img src="/chat-logo.png" alt=""> -->
-    <!-- <h1 id="name"></h1> -->
-    <!-- </div> -->
-    <!-- <div class="message_area"></div> -->
-    <!-- </div> -->
-    <!-- </div> -->
-
-    <!-- <!~~ </div> ~~> -->
-    <!-- </div> -->
-
-    <!-- </section> -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <!-- <script src="/socket.io/socket.io.js"></script> -->
-    <!-- <script src="/client.js"></script> -->
-
 </body>
 
 </html>

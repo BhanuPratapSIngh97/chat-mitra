@@ -5,30 +5,26 @@
     box-sizing: border-box;
 }
 
-body {
-    /* display: flex; */
-    /* align-items: center; */
-    /* justify-content: center; */
-    /* min-height: 100vh; */
-    /* font-family: 'Roboto', sans-serif; */
-}
+/* body { */
+    /* /~ display: flex; ~/ */
+    /* /~ align-items: center; ~/ */
+    /* /~ justify-content: center; ~/ */
+    /* /~ min-height: 100vh; ~/ */
+    /* /~ font-family: 'Roboto', sans-serif; ~/ */
+/* } */
 section.chat__section {
     width: 800px;
     max-width: 90%;
     background: #fff;
-    height: auto;
-    /* box-shadow: 0 10px 15px 3px rgba(243, 11, 11, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); */
+    height:fit-content;
 }
 .brand {
     padding: 5px;
-    /* background: #f1f1f1; */
     background-color: #e0e7eb;
     display: flex;
     align-items: center;
-    border-radius: 8px;
     text-decoration: underline;
     text-shadow: 2px 2px white;
-
 }
 .brand h1 {
     text-transform: capitalize;
@@ -63,23 +59,27 @@ section.chat__section {
 }
 .incoming {
     background: hsl(199deg 21% 90%);
-    color: #000;  
+    color: #000;
+    margin-right: auto;
     word-break:break-word;
+    max-width: 50%;
+    min-width: auto;
+
 }
 .outgoing {
     background: #e1ffc7;
     color: #000;
     margin-left: auto;
     word-break:break-word;
-    /* min-width: min-content; */
-    /* max-width: max-content; */
+    max-width: 50%;
 }
 .message h4 {
-    position: absolute;
+    position: sticky;
     top: -20px;
     left: 0;
-    color: #333;
+    color: #0042ff8c;
     font-size: 14px;
+    text-decoration: underline;
 }
 .message_area{
     height: 82vh;
@@ -90,13 +90,11 @@ section.chat__section {
     flex-direction: column;
     overflow-y: auto;
     padding-top: 40px;
-    /* box-shadow: 0px 10px 15px 3px; */
-    border-radius: 15px;
     background-image: url('../purple.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    /* filter: drop-shadow(0px 0px 10px black); */
+    filter: drop-shadow(0px 0px 8px black);
 }
 
 img{
@@ -119,11 +117,20 @@ img{
   .textarea-container textarea { 
     width: 100%; 
     height: 100%; 
-  } 
+    outline: none;
+    padding: 0px 30px;
+} 
   .textarea-container button { 
     position: absolute; 
     top: 0; 
     right: 0; 
+    background: transparent;
+    border: none;
     /* padding: 12px; */
     margin-right: 3px;
+  }
+  @media  (max-width:400px){
+    #pic{
+        background-image: url('../what.jpg');
+    }
   }

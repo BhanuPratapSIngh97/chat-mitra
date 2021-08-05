@@ -13,12 +13,16 @@ showName(user_name);
 
 textarea.addEventListener('keyup',(e)=>{
     if(e.key =='Enter'){
-        sendMessage(e.target.value)
+        if((e.target.value).trim().length>0){
+            sendMessage(e.target.value)
+        }
     }
 })
 
 function send_btn(){
-    sendMessage(document.getElementById("textarea").value);
+    if((document.getElementById("textarea").value).trim().length>0){
+        sendMessage(document.getElementById("textarea").value);
+    }
 }
 
 function sendMessage(msg){
