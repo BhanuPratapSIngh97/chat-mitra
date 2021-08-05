@@ -17,6 +17,10 @@ textarea.addEventListener('keyup',(e)=>{
     }
 })
 
+function send_btn(){
+    sendMessage(document.getElementById("textarea").value);
+}
+
 function sendMessage(msg){
     let masg = {
         user : user_name,
