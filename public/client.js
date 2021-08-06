@@ -2,16 +2,20 @@ const socket = io();
 
 let user_name;
 
-let textarea = document.querySelector('#textarea');
-let messageArea = document.querySelector('.message_area');
-let nameArea = document.querySelector('#name')
-let chats = document.querySelector('.chat')
+let textarea = document.querySelector('#textarea');     // getting the msg from text_Area
+let messageArea = document.querySelector('.message_area');  // apeend incoming & outtgoing msg's
+let nameArea = document.querySelector('#name')      // showing user's name on the header
 
-do{
+// do{
     user_name = prompt("please Enter you name");
-}while(!user_name)
+    if (user_name == null || user_name == "" || user_name.length < 3) {
+        // text = "User cancelled the prompt.";
+        location.href = 'blank.html'
+      } else {
+        showName(user_name);
+      }
+// }while(!user_name)
 
-showName(user_name);
 
 socket.emit('user_joined',user_name);
 
@@ -21,6 +25,21 @@ textarea.addEventListener('keyup',(e)=>{
             sendMessage(e.target.value)
         }
     }
+});
+
+
+// recieved msg
+socket.on('message',(msg)=>{
+    appendMessage(msg, 'incoming');    
+    scrollToBottom();
+});
+
+socket.on('user_connected',(socket_name)=>{         // when user is joined the chat
+    userJoinLeft(socket_name,'Joined');
+});
+
+socket.on('user_disconnected',(socket_name)=>{         //when user left the chat
+    userJoinLeft(socket_name,'left');
 });
 
 function send_btn(){
@@ -64,24 +83,10 @@ function appendMessage(msg, type){
             messageArea.appendChild(mainDiv);
 };
 
-// recieved msg
-socket.on('message',(msg)=>{
-    appendMessage(msg, 'incoming');    
-    scrollToBottom();
-});
-
-socket.on('user_connected',(socket_name)=>{         // when user is joined the chat
-    userJoinLeft(socket_name,'Joined');
-});
-
-socket.on('user_disconnected',(socket_name)=>{         //when user left the chat
-    userJoinLeft(socket_name,'left');
-});
-
 function userJoinLeft(name,status){
     let mainDiv = document.createElement('div');
     let markup = `<p class="chat"><b>${name} </b> ${status} the chat..</p>`
-    // div.classList.add('d-flex justify-content-center');
+    mainDiv.classList.add('notification');
     mainDiv.innerHTML = markup;
     messageArea.appendChild(mainDiv);
 };
