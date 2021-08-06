@@ -64,7 +64,7 @@ section.chat__section {
     word-break:break-word;
     max-width: 50%;
     min-width: auto;
-
+    margin-top: -35px;
 }
 .outgoing {
     background: #e1ffc7;
@@ -72,6 +72,7 @@ section.chat__section {
     margin-left: auto;
     word-break:break-word;
     max-width: 50%;
+    margin-top: -35px;
 }
 .message h4 {
     position: sticky;
@@ -101,7 +102,16 @@ img{
     height: 50px;
     width: 75px;
 }
-
+.chat{
+    text-align: center;
+    background-color: white;
+    border-style: double;
+    border-radius: 20px;
+    padding: 4px;
+    margin-left: 30%;  
+    margin-right: 30%;
+    margin-bottom: 6%;
+}
 /* .message__area{ */
     /* height: 500px; */
     /* padding: 16px; */

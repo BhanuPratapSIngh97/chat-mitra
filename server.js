@@ -1,10 +1,11 @@
-const console = require('console');
 const { Socket } = require('dgram');
 const express = require('express');
 const app = express();
 const http = require('http').createServer(app);
 
 const PORT = process.env.PORT || 3000
+
+var users = {};
 
 http.listen(PORT, ()=>{
     console.log("listening on PORT", PORT);
@@ -19,8 +20,22 @@ app.get('/',(req,res)=>{
 const io  = require('socket.io')(http);
 
 io.on('connection',(Socket)=>{
-    console.log('connected.....',Socket.id); // id is always different..
+    console.log('connected user_id .....',Socket.id); // id is always different..
+
+    Socket.on('user_joined', (user_name)=>{
+        users[Socket.id] = user_name;
+        Socket.broadcast.emit('user_connected',user_name);
+    });                                                    // *when User joined the chat*
+
+
     Socket.on('message', (msg)=>{
         Socket.broadcast.emit('message', msg);
-    })
+    });                                             //*when some user send the message*
+
+
+    Socket.on('disconnect', ()=>{
+        Socket.broadcast.emit('user_disconnected', user=users[Socket.id]);
+        delete users[Socket.id];
+        // console.log("users delete", users)
+    });                                             //*when an user left the chat*
 })
