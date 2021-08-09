@@ -27,7 +27,10 @@ section.chat__section {
     background-color: #e0e7eb;
     display: flex;
     align-items: center;
-    position: sticky;
+    position: fixed;
+    height: auto;
+    z-index: 100;
+    width: 100%;
     /* text-shadow: 2px 2px white; */
 }
 .brand h1 {
@@ -88,7 +91,7 @@ section.chat__section {
     text-decoration: underline;
 }
 .message_area{
-    height: 82vh;
+    height: 92vh;
     padding-left: 18px;
     padding-right: 18px;
     width: auto;
