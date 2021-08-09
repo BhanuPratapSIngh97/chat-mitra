@@ -98,7 +98,7 @@ section.chat__section {
     display: flex;
     flex-direction: column;
     overflow-y: auto;
-    padding-top: 40px;
+    padding-top: 100px;
     background-image: url('../purple.png');
     background-repeat: no-repeat;
     background-size: cover;
