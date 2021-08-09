@@ -27,15 +27,16 @@ io.on('connection',(Socket)=>{
         Socket.broadcast.emit('user_connected',user_name);
     });                                                    // *when User joined the chat*
 
-
     Socket.on('message', (msg)=>{
         Socket.broadcast.emit('message', msg);
     });                                             //*when some user send the message*
 
+    Socket.on('typing',(name)=>{
+        Socket.broadcast.emit('typing',name);
+    })
 
     Socket.on('disconnect', ()=>{
         Socket.broadcast.emit('user_disconnected', user=users[Socket.id]);
         delete users[Socket.id];
-        // console.log("users delete", users)
     });                                             //*when an user left the chat*
 })

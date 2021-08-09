@@ -18,12 +18,15 @@ section.chat__section {
     background: #fff;
     height:fit-content;
 }
+#feedback{
+    margin-left: 30px;
+    color: #2d2c2c;
+}
 .brand {
     padding: 5px;
     background-color: #e0e7eb;
     display: flex;
     align-items: center;
-    text-decoration: underline;
     text-shadow: 2px 2px white;
 }
 .brand h1 {
@@ -33,6 +36,7 @@ section.chat__section {
     font-style: italic;
     margin-left: 10px;  
     font-variant: small-caps;
+    text-decoration: underline;
 }
 
 /* textarea { */
@@ -97,7 +101,11 @@ section.chat__section {
     background-position: center;
     filter: drop-shadow(0px 0px 8px black);
 }
-
+#demo{
+    margin-bottom: 0px;
+    margin-top: 20px;
+    margin-left: -40px;
+}
 img{
     height: 50px;
     width: 75px;
