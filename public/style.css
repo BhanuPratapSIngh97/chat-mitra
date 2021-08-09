@@ -27,7 +27,7 @@ section.chat__section {
     background-color: #e0e7eb;
     display: flex;
     align-items: center;
-    text-shadow: 2px 2px white;
+    /* text-shadow: 2px 2px white; */
 }
 .brand h1 {
     text-transform: capitalize;

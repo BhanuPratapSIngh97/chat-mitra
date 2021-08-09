@@ -39,7 +39,7 @@ socket.on('typing',(name)=>{
 // recieved msg
 socket.on('message',(msg)=>{
     feedback.innerHTML = ""
-    if(msg.length > 0){
+    if(msg.message && msg.message.length > 0){
         appendMessage(msg, 'incoming');    
         scrollToBottom();
     }
