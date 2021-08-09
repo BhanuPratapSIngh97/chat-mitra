@@ -27,6 +27,7 @@ section.chat__section {
     background-color: #e0e7eb;
     display: flex;
     align-items: center;
+    position: sticky;
     /* text-shadow: 2px 2px white; */
 }
 .brand h1 {

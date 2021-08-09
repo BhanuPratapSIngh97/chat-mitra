@@ -59,7 +59,7 @@ function deleteTypingStatus(){
             socket.emit('message',"");
         }
         deleteTypingStatus();
-    },1000);
+    },2000);
 }
 
 function send_btn(){
