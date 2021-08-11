@@ -21,6 +21,7 @@ section.chat__section {
 #feedback{
     /* margin-left: 100px; */
     color: #2d2c2c;
+    text-align: center;
 }
 
 .users-count{
@@ -203,5 +204,8 @@ img{
         width: 100px;
         height: 30px;
         line-height: 30px;
+    }
+    .wrapper{
+        margin-left: 100px;
     }
   }
