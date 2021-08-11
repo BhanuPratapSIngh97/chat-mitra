@@ -7,15 +7,23 @@ let messageArea = document.querySelector('.message_area');  // apeend incoming &
 let nameArea = document.querySelector('#name')      // showing user's name on the header
 let typingStatus = document.querySelector(".brand");
 let feedback = document.getElementById("feedback");
+let users_list = document.querySelector(".users_list");
+let users_count  = document.querySelector(".users-count");
+
 
 let TypingCount = 0;
 // do{
-    user_name = prompt("please Enter you name");
-    if (user_name == null || user_name == "" || user_name.length < 3) {
-        location.href = 'blank.html'
-      } else {
+    if(!window.localStorage.token){
+        user_name = prompt("please Enter you name");
+        // showName('user_name');
+        if (user_name == null || user_name == "" || user_name.length < 3) {
+            location.href = 'blank.html'
+          } else {
+            showName(user_name);
+          }
+    }else{
         showName(user_name);
-      }
+    }
 // }while(!user_name)
 socket.emit('user_joined',user_name);
 
@@ -52,6 +60,18 @@ socket.on('user_connected',(socket_name)=>{         // when user is joined the c
 socket.on('user_disconnected',(socket_name)=>{         //when user left the chat
     userJoinLeft(socket_name,'left');
 });
+
+socket.on('user_list', (users)=>{
+    users_list.innerHTML =""
+    users_arr = Object.values(users);
+    for(let usr of users_arr){
+        let li = document.createElement('li');
+        li.innerHTML = usr
+        users_list.appendChild(li);
+    }
+    // users_count.innerHTML = users_arr.length; // showing the count of online users
+})
+
 
 function deleteTypingStatus(){
     setTimeout(()=>{

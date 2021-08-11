@@ -19,11 +19,18 @@ section.chat__section {
     height:fit-content;
 }
 #feedback{
-    margin-left: 30px;
+    /* margin-left: 100px; */
     color: #2d2c2c;
 }
+
+.users-count{
+    color: green;
+    margin-top: 20px;
+
+}
+
 .brand {
-    padding: 5px;
+    padding: 0px;
     background-color: #e0e7eb;
     display: flex;
     align-items: center;
@@ -91,7 +98,7 @@ section.chat__section {
     text-decoration: underline;
 }
 .message_area{
-    height: 90vh;
+    height: 88vh;
     padding-left: 18px;
     padding-right: 18px;
     width: auto;
@@ -136,6 +143,37 @@ img{
     /* overflow-y: auto; */
     /* padding-top: 40px; */
 /* } */
+.wrapper{
+    width: 200px;
+    margin:0 auto;
+}
+.wrapper ul{
+    list-style: none;
+}
+.wrapper ul li{
+    background: black;
+    color: white;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    float: left;
+    margin-right: 20px;
+    margin-top: 1px;
+    position: relative;
+    border-radius: 30px;
+    font-family: big john;
+}
+.wrapper ul li:hover{
+    background: green;
+    margin-top: 1px;
+}
+.wrapper ul ul{
+    display: none;
+}
+.wrapper ul li:hover > ul{
+    display: block;
+}
 
 .textarea-container { 
     position: relative; 
@@ -160,5 +198,10 @@ img{
   @media  (max-width:400px){
     #pic{
         background-image: url('../what.jpg');
+    }
+    .wrapper ul li{
+        width: 100px;
+        height: 30px;
+        line-height: 30px;
     }
   }

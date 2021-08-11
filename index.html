@@ -19,13 +19,29 @@
     <div class="col-md-12 col-sm-12 col-12">
         <section class="chat_section">
             <div class="brand">
-                <img src="/chat-logo.png" alt="">
-                <h1 id="name"></h1>
-                <div id="feedback"></div>
+                <div class="col-md-3">
+                    <img src="/chat-logo.png" alt="">
+                    <h1 id="name"></h1>
+                </div>
+                <div class="col-md-6">
+                    <div id="feedback"></div>
+                </div>
+                <div class="col-md-3">
+                    <div class="wrapper">
+                        <ul>
+                            <li>Online
+                                <ul class="users_list">
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- <h4 class="users-count"></h4> -->
+                </div>
             </div>
             <div class="message_area" id="pic"></div>
             <div class="textarea-container">
-                <textarea id="textarea"  onfocus="deleteTypingStatus()" placeholder="Type a message....." name="foo"></textarea>
+                <textarea id="textarea" onfocus="deleteTypingStatus()" placeholder="Type a message....."
+                    name="foo"></textarea>
                 <button onclick="send_btn()"><img src="/send.png" alt=""
                         style="width: 62px !important; height: 36px !important; margin-left: 10px; margin-top: 6px;"></button>
             </div>

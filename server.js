@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const http = require('http').createServer(app);
 
+
 const PORT = process.env.PORT || 3000
 
 var users = {};
@@ -25,6 +26,7 @@ io.on('connection',(Socket)=>{
     Socket.on('user_joined', (user_name)=>{
         users[Socket.id] = user_name;
         Socket.broadcast.emit('user_connected',user_name);
+        io.emit('user_list',users);
     });                                                    // *when User joined the chat*
 
     Socket.on('message', (msg)=>{
@@ -38,5 +40,7 @@ io.on('connection',(Socket)=>{
     Socket.on('disconnect', ()=>{
         Socket.broadcast.emit('user_disconnected', user=users[Socket.id]);
         delete users[Socket.id];
+        io.emit('user_list',users);
+
     });                                             //*when an user left the chat*
 })
