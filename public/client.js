@@ -16,7 +16,8 @@ let TypingCount = 0;
     if(!window.localStorage.token){
         user_name = prompt("please Enter you name");
         // showName('user_name');
-        if (user_name == null || user_name == "" || user_name.length < 3) {
+        if (user_name == null || user_name == "" || user_name.length < 3 ||  user_name.length >20) {
+            alert("Enter a name between 3 to 20 characters .")
             location.href = 'blank.html'
           } else {
             showName(user_name);
