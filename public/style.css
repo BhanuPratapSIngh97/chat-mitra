@@ -78,16 +78,17 @@ section.chat__section {
     color: #000;
     margin-right: auto;
     word-break:break-word;
-    max-width: 50%;
+    max-width: 49%;
     min-width: auto;
-    margin-top: -35px;
+    /* margin-top: -35px; */
+    margin-bottom: 6px;
 }
 .outgoing {
     background: #e1ffc7;
     color: #000;
     margin-left: auto;
     word-break:break-word;
-    max-width: 50%;
+    max-width: 49%;
     margin-bottom: 5px;
 }
 .message h4 {
@@ -130,11 +131,11 @@ img{
     padding: 4px;
     margin-left: 30%;  
     margin-right: 30%;
-    margin-bottom: 6%;
+    margin-bottom: 2%;
 }
 .notification{
-    margin-bottom: 34px;
-    margin-top: -25px;
+    margin-bottom: 0px;
+    margin-top: 10px;
 }
 /* .message__area{ */
     /* height: 500px; */
