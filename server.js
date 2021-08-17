@@ -31,6 +31,8 @@ io.on('connection',(Socket)=>{
 
     Socket.on('message', (msg)=>{
         Socket.broadcast.emit('message', msg);
+        // var socket_id = Socket.id
+        // io.to(socket_id).emit('message',msg) // single user msg send
     });                                             //*when some user send the message*
 
     Socket.on('typing',(name)=>{

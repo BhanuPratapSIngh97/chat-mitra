@@ -40,8 +40,9 @@
             </div>
             <div class="message_area" id="pic"></div>
             <div class="textarea-container">
-                <textarea id="textarea" onfocus="deleteTypingStatus()" placeholder="Type a message....."
-                    name="foo"></textarea>
+                <textarea id="textarea"  placeholder="Type a message....."
+                    name="foo"></textarea>  
+                    <!-- onfocus="deleteTypingStatus()" -->
                 <button onclick="send_btn()"><img src="/send.png" alt=""
                         style="width: 62px !important; height: 36px !important; margin-left: 10px; margin-top: 6px;"></button>
             </div>
@@ -51,8 +52,4 @@
     <script src="/client.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
-
-<!-- onfocus="typing()" -->
-<!-- onkeypress="typing()" onfocus="deleteTyping()"  -->
-
 </html>

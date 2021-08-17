@@ -41,6 +41,16 @@ textarea.addEventListener('keypress',()=>{
     socket.emit('typing',user_name)
 })
 
+textarea.addEventListener('focus',()=>{
+    socket.emit('typing',user_name)
+})
+
+textarea.addEventListener('blur',()=>{
+    socket.emit('message',"");
+})
+
+
+
 socket.on('typing',(name)=>{
     feedback.innerHTML = '<p><em>'+name+' is typing a message...</em></p>'
 })
@@ -66,21 +76,23 @@ socket.on('user_list', (users)=>{
     users_list.innerHTML =""
     users_arr = Object.values(users);
     for(let usr of users_arr){
-        let li = document.createElement('li');
-        li.innerHTML = usr
-        users_list.appendChild(li);
+        if(usr != user_name){
+            let li = document.createElement('li');
+            li.innerHTML = usr
+            users_list.appendChild(li);
+        }
     }
     // users_count.innerHTML = users_arr.length; // showing the count of online users
 })
 
 
 function deleteTypingStatus(){
-    setTimeout(()=>{
+    // setTimeout(()=>{
         if (document.getElementById("textarea").value.trim().length < 1) {
             socket.emit('message',"");
         }
         deleteTypingStatus();
-    },2000);
+    // },2000);
 }
 
 function send_btn(){
