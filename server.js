@@ -30,7 +30,7 @@ io.on('connection',(Socket)=>{
     });                                                    // *when User joined the chat*
 
     Socket.on('message', (msg)=>{
-        console.log(msg,"==msgs===");
+        console.log(msg,"==msgs===123123123");
         Socket.broadcast.emit('message', msg);
         // var socket_id = Socket.id
         // io.to(socket_id).emit('message',msg) // single user msg send
